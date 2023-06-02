@@ -9,7 +9,7 @@ jogadas = 1
 
 print("Você tem 03 jogadas.\n")
 
-#TA ERRADAO REESCREVE ESSA PORRA
+#TA ERRADAO 
 
 while jogadas <= 3:
 
