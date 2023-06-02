@@ -1,52 +1,46 @@
-import random
+def jogoNumero():
 
-titulo = ("Adivinhe qual o número")
-print(titulo.center(len(titulo)+10, "*"))
+    import random
 
-numero = random.randint(0, 2)
+    titulo = ("Adivinhe qual o número")
+    print(titulo.center(len(titulo)+10, "*"))
+    print("\nVocê terá 3 tentativas para acertar.")
+    print("-".center(60, '-'))
+    numero = random.randint(0, 2)
+    jogadas = 0
 
-jogadas = 1
-
-print("Você tem 03 jogadas.\n")
-
-#TA ERRADAO REESCREVE ESSA PORRA
-
-while jogadas <= 3:
-
-    if jogadas == 1:
+    while True :
         try:
-            tentativa = int(input(f"Digite um numero e tente acertar.\nJogada numero {jogadas:02d}: "))
+            tentativa = int(input("\nDigite o seu palpite: "))
         except:
-            print("O jogo so funciona com numeros inteiros, inicie o programa novamente.")
-            exit()        
-    else:    
-        tentativa = input("\nDigite outro numero para tentar novamente,\nou 'exit' para sair.\n\n>>>>>>>>>>>>:")
-
-    maior = tentativa > numero
-    menor = tentativa < numero
-    acerto = tentativa == numero
-
-    # print("\n", numero)
-    
-    if acerto:
-        print("Parabens você digitou o numero correto!")
-        print(f"Venceu na rodada: {jogadas:02d}")
-        break
-    else:
-        if maior:
-            print(f"Seu chute ({tentativa:02d}) foi maior que o numero secreto.")
-
-        elif menor:
-            print(f"Seu chute ({tentativa:02d}) foi menor que o numero secreto.")       
-        jogadas += 1       
+            print("Digite apenas numeros inteiros.")
+            continue
+        else:
         
-    if tentativa.upper() == "EXIT":
-        print("Saindo do jogo.")
-        exit()
-    else:
-        tentativa = int(tentativa)
+            acerto = numero == tentativa
+            maior = tentativa > numero
+            menor = tentativa < numero
 
-    print(f"\nJogada numero {jogadas:02d}:")
+            if acerto:
+                print("\nParabéns você acertou!!!")
+                break
+            else:
+                if maior:
+                    print("\nSeu chute foi maior que o numero secreto")
+                else:
+                    print("\nSeu chute foi menor que o numero secreto")
 
-print(f"Você atingiu o numero máximo de jogadas: ({jogadas:02d}).")
-print("Saindo do jogo.")
+            x = input("\nDigite 'EXIT' para sair, ou qualquer tecla para continuar: ")
+
+            if x.upper() == "EXIT":
+                print("Saindo do jogo")
+                exit()
+            else:
+                jogadas += 1
+                print(f"Jogada número {jogadas} efetuada".center(60, "^"))
+
+                if jogadas == 3:
+                    print("\n\n*Voce atingiu o numero máximo de tentativas*\nFIM DE JOGO.")
+                    exit()
+
+jogoNumero()
