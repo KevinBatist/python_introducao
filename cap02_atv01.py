@@ -43,4 +43,8 @@ def jogoNumero():
                     print("\n\n*Voce atingiu o numero máximo de tentativas*\nFIM DE JOGO.")
                     exit()
 
+<<<<<<< HEAD
 jogoNumero()
+=======
+jogoNumero()
+>>>>>>> 602b539ca5be23b8a7b9a33fb643c4c3a2755dfd
