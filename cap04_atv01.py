@@ -1,4 +1,4 @@
-from adivinhe import jogoNumeroVer2
+from adivinhe import jogoNumeroVer2, jogoNumero
 from aforca import gg
 
 print('****************************************')
