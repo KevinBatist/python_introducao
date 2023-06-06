@@ -1,5 +1,5 @@
 from adivinhe import jogoNumeroVer2, jogoNumero
-from aforca import gg
+from forca import forca
 
 print('****************************************')
 print('---------- Escolha seu Game! -----------')
@@ -10,8 +10,8 @@ jogo = int(input('Qual vai ser o game? '))
 
 if (jogo == 1):
     print('GG forca')
-    gg()
+    forca()
 elif (jogo == 2):
     print('GG adivinhe')
-    jogoNumeroVer2()
+    jogoNumero()
 
