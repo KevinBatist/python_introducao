@@ -2,8 +2,6 @@ def jogoNumero():
 
     import random
 
-    print("Adivinhe qual o número".center(60, "-"))
-
     print("\nVocê terá 3 tentativas para acertar.".center(60," "))
  
     numero = random.randint(0, 2)
